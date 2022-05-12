@@ -1,0 +1,107 @@
+{
+  "resource": "/api/hello/{name}",
+  "path": "/api/hello/dnvriend",
+  "httpMethod": "GET",
+  "headers": {
+    "Accept": "*/*",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "NL",
+    "Host": "bcipb11hoh.execute-api.eu-west-1.amazonaws.com",
+    "User-Agent": "curl/7.79.1",
+    "Via": "2.0 7759c849c7040f0b6b78f9d2199c04ca.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "dwl40IJorEnILah86NCqfg9VCwgp66bP4hX42PXx9zR53WsFDw6usw==",
+    "X-Amzn-Trace-Id": "Root=1-627cf29e-16afa47e2035fb915039a57a",
+    "X-Forwarded-For": "77.60.81.22, 64.252.180.175",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "multiValueHeaders": {
+    "Accept": [
+      "*/*"
+    ],
+    "CloudFront-Forwarded-Proto": [
+      "https"
+    ],
+    "CloudFront-Is-Desktop-Viewer": [
+      "true"
+    ],
+    "CloudFront-Is-Mobile-Viewer": [
+      "false"
+    ],
+    "CloudFront-Is-SmartTV-Viewer": [
+      "false"
+    ],
+    "CloudFront-Is-Tablet-Viewer": [
+      "false"
+    ],
+    "CloudFront-Viewer-Country": [
+      "NL"
+    ],
+    "Host": [
+      "bcipb11hoh.execute-api.eu-west-1.amazonaws.com"
+    ],
+    "User-Agent": [
+      "curl/7.79.1"
+    ],
+    "Via": [
+      "2.0 7759c849c7040f0b6b78f9d2199c04ca.cloudfront.net (CloudFront)"
+    ],
+    "X-Amz-Cf-Id": [
+      "dwl40IJorEnILah86NCqfg9VCwgp66bP4hX42PXx9zR53WsFDw6usw=="
+    ],
+    "X-Amzn-Trace-Id": [
+      "Root=1-627cf29e-16afa47e2035fb915039a57a"
+    ],
+    "X-Forwarded-For": [
+      "77.60.81.22, 64.252.180.175"
+    ],
+    "X-Forwarded-Port": [
+      "443"
+    ],
+    "X-Forwarded-Proto": [
+      "https"
+    ]
+  },
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": {
+    "name": "dnvriend"
+  },
+  "stageVariables": null,
+  "requestContext": {
+    "resourceId": "x1if54",
+    "resourcePath": "/api/hello/{name}",
+    "httpMethod": "GET",
+    "extendedRequestId": "SArY3G_DDoEFYwg=",
+    "requestTime": "12/May/2022:11:42:22 +0000",
+    "path": "/Prod/api/hello/dnvriend",
+    "accountId": "452197817098",
+    "protocol": "HTTP/1.1",
+    "stage": "Prod",
+    "domainPrefix": "bcipb11hoh",
+    "requestTimeEpoch": 1652355742929,
+    "requestId": "296e18f0-fa6d-4aa6-9636-0352a0a7a7e0",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "77.60.81.22",
+      "principalOrgId": null,
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "curl/7.79.1",
+      "user": null
+    },
+    "domainName": "bcipb11hoh.execute-api.eu-west-1.amazonaws.com",
+    "apiId": "bcipb11hoh"
+  },
+  "body": null,
+  "isBase64Encoded": false
+}

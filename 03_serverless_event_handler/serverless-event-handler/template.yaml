@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  # https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: resize/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Timeout: 30 # seconds
+      MemorySize: 128 # MB 
+      Environment:
+        Variables:
+          DST_BUCKET_NAME: !Ref DstBucket
+      Architectures:
+        - x86_64
+      Policies:
+        - AmazonS3FullAccess
+      Events:
+        CreateThumbnailEvent:
+          Type: S3
+          Properties:
+            Bucket: !Ref SrcBucket
+            Events: s3:ObjectCreated:*
+  
+  SrcBucket:
+    Type: AWS::S3::Bucket
+
+  DstBucket:
+    Type: AWS::S3::Bucket

@@ -1,0 +1,102 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  ZipCodeTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: zipcodes
+      PrimaryKey:
+        Name: id
+        Type: String
+
+  ListZipCode:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: list_zipcode/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Policies: 
+        - AmazonDynamoDBFullAccess
+      Architectures:
+        - x86_64
+      Events:
+        Read:
+          Type: Api
+          Properties:
+            Path: /zipcode
+            Method: get
+
+  # AddZipCode:
+  #   Type: AWS::Serverless::Function
+  #   Properties:
+  #     CodeUri: add_zipcode/
+  #     Handler: app.lambda_handler
+  #     Runtime: python3.9
+  #     Policies: 
+  #       - AmazonDynamoDBFullAccess
+  #     Architectures:
+  #       - x86_64
+  #     Events:
+  #       Read:
+  #         Type: Api
+  #         Properties:
+  #           Path: /zipcode
+  #           Method: put
+
+  GetZipCode:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: get_zipcode/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Policies: 
+        - AmazonDynamoDBFullAccess
+      Architectures:
+        - x86_64
+      Events:
+        Read:
+          Type: Api
+          Properties:
+            Path: /zipcode/{code}
+            Method: get
+
+  # DeleteZipCodes:
+  #   Type: AWS::Serverless::Function
+  #   Properties:
+  #     CodeUri: delete_zipcode/
+  #     Handler: app.lambda_handler
+  #     Runtime: python3.9
+  #     Policies: 
+  #       - AmazonDynamoDBFullAccess
+  #     Architectures:
+  #       - x86_64
+  #     Events:
+  #       Read:
+  #         Type: Api
+  #         Properties:
+  #           Path: /zipcode/{code}
+  #           Method: delete
+
+  # UpdateZipCodes:
+  #   Type: AWS::Serverless::Function
+  #   Properties:
+  #     CodeUri: update_zipcode/
+  #     Handler: app.lambda_handler
+  #     Runtime: python3.9
+  #     Policies: 
+  #       - AmazonDynamoDBFullAccess
+  #     Architectures:
+  #       - x86_64
+  #     Events:
+  #       Read:
+  #         Type: Api
+  #         Properties:
+  #           Path: /zipcode
+  #           Method: patch
+
+
+Outputs:
+  ServerlessCrudApi:
+    Description: "API Gateway endpoint URL for Prod stage for ServerlessCrudApi function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/zipcode/"

@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "serverless-event-handler"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-kx70xen8l6tk"
+s3_prefix = "serverless-event-handler"
+region = "eu-west-1"
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = []
